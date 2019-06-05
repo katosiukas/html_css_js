@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<title>
+		šalinimas
+	</title>
+	<script>
+			
+		function salinti_nulius() {
+		
+			var skaiciai = document.getElementById ( 'sk' ).value.split( ',' );
+			
+			rez_str = 'Įvesti skaičiai: <br>';
+			
+			flag_duom_teisingi = true;
+															// --- skaičių teisingumo tikrinimas ..
+			for (  i = 0; i < skaiciai.length; i++ ) { 
+			
+				rez_str += skaiciai [ i ] + ' ';							// .. ir duomenų pateikimas rezultate										
+			
+				if ( isNaN ( skaiciai [ i ] ) ) {   						// &&
+				
+					flag_duom_teisingi = false;
+				}
+			}
+			rez_str += '<br>';			
+			
+			if ( flag_duom_teisingi  ) {
+			
+				if ( skaiciai.length < 1 ) {
+				
+					rez_str += 'skaičių turi būti bent 1';
+					
+				} else {
+				
+					
+					max = parseInt ( skaiciai [ 0 ] );
+					l = 0;		
+										
+					for  (  i = 1; i < skaiciai.length; i++ )  {
+					
+						skaic = parseInt ( skaiciai [ i ] );
+												
+
+						
+						if ( skaic == 0 ) {
+						
+						l = l + 1;
+						
+						rez_str += ' max ' + l + ' '  + max; 
+						rez_str += '<br>';
+						max = 0;
+												
+						}
+													
+						if ( skaic > max ) {
+						
+							max = skaic;
+						}
+					
+					    if ( i == skaiciai.length ) {
+						
+							rez_str += max;
+							rez_str += '<br>';
+						
+						}
+
+					}
+
+				//	rez_str += ' max = ' + max;
+					rez_str += '<br>';														// sprendimo pabaiga
+				}
+				
+			} else {
+				
+				rez_str += 'yra nekorektiški';
+			}
+			
+			rez = document.getElementById ( 'rez' );
+			rez.innerHTML = rez_str; 
+		}
+	</script>
+</head>
+<body> 
+	skaičiai?<br>
+	<input type="text" id="sk" style="width: 600px" value="8,6,7,4,12,0,18,4,14,0,7,3,1,0,4,2,8,7,2,6"><br>
+	<input type="button" onClick="salinti_nulius()" value="dariti">
+	<div id="rez">
+	</div>
+</body>
+</html>
