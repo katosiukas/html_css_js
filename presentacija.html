@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<title>
+		Presentacija.
+	</title>
+	
+
+<style>
+#div0 {
+  background-color: lightgrey;
+  width: 100px;
+  border: 15px solid green;
+  border-style: groove;
+  padding: 50px;
+  margin-top: 300px;
+  margin-left: 10px;
+}
+
+#div1 {
+  background-color: lightblue;
+  width: 100px;
+  border: 15px solid green;
+  border-style: groove;
+  padding: 75px;
+  margin-top: -300px;
+  margin-left: 300px;
+}
+
+#div2 {
+  background-color: red;
+  width: 100px;
+  border: 15px solid green;
+  border-style: groove;
+  padding: 100px;
+  margin-top: -380px;
+  margin-left: 650px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Ka as veikiau praeita vasara:</h2>
+
+<div id="div0">
+ <img src="acc.jpg" style="width:100%">
+ <div class="dropdown">
+  <span>Darbas ACC</span>
+  <div class="dropdown-content">
+  <p>Padirbejau kelis metus ACC.</p>
+  </div>
+</div>
+</div>
+
+<div id="div1"> 
+<img src="ict.jpg" style="width:100%">
+<div class="dropdown">
+  <span>Darbas ICT</span>
+  <div class="dropdown-content">
+  <p>Padirbejau kelis metus ICT.</p>
+  </div>
+</div>
+</div>
+
+<div id="div2">
+<img src="team.jpg" style="width:100%">
+<div class="dropdown">
+  <span>ICT TeamLead</span>
+  <div class="dropdown-content">
+  <p>Ir tada pabuvau ICT teamlead.</p>
+  </div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
