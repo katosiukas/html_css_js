@@ -2,20 +2,12 @@
 <html>
 <head>
 		<meta charset="utf-8">
-	<style>
-#panel, .flip {
-  font-size: 14px;
-  padding: 6px;
-  text-align: center;
-  background-color: #4CAF50;
-  color: white;
-  border: solid 1px #a6d8a8;
-  margin: auto;
+	
+<style>
+table, td {
+  border: 1px solid black;
 }
 
-#panel {
-  display: none;
-}
 </style>
 	
 	<title>
@@ -37,21 +29,20 @@
 				x_p = document.getElementById ( 'x_pr' ).value;
 				
 			
-			//	x_gal = parseInt ( x_g );
-			//	x_pr = parseInt ( x_p );
+			
 				dV = (	x_g - x_p ) / 19;
 				
-			//	rez_str = ' dx = ';
-			//	rez_str += dV;
+			
 				rez_str = '<br>';
 				
 				p = ((m/M)*R*T)/dV;
 				
-			//	rez_str += ' p yra = ' + p;
-			//	rez_str += '<br>';
+			
 				
 						i = x_g - x_p;
 						dVV = dV;
+						
+						rez_str += '<table><tr><th>dVV</td><td>p</td></tr>';
 						
 						for ( n = 0; n < i; n++) {
 						
@@ -63,7 +54,12 @@
 								rez_str += ' p yra = ' + p;
 								rez_str += '<br>';
 								rez_str += '<br>';
+								
+							rez_str += '<tr><td>' + dVV + '</td><td>' + p + '</td></tr>';
+				
+			
 				}
+				rez_str += '</table>';
 				
 				
 				
@@ -94,14 +90,11 @@
 	<input type="text" id="x_gal" style="width: 60px" value=""><br>
 	
 	
-	<input type="button" class="flip" onClick="paskaiciuokim()" style="border:2px solid Violet; color:White; background-color:Red" value="skaiciuoti">
+	<input type="button" onClick="paskaiciuokim()" style="border:2px solid Violet; color:White; background-color:Red" value="skaiciuoti">
 	<div id="rez">
 	</div>
 		
 		
-		<div id="panel">
-		<p>Rezultatai cia.</p>
-		</div>
 
 
 </body>
