@@ -4,10 +4,14 @@
 		<meta charset="utf-8">
 	
 <style>
-table, td {
-  border: 1px solid black;
-}
+	table {
 
+	  border-collapse: collapse;
+	}
+	th, td {
+		  border: 1px solid black;
+		  padding: 3px 6px;
+	}
 </style>
 	
 	<title>
@@ -42,7 +46,7 @@ table, td {
 						i = x_g - x_p;
 						dVV = dV;
 						
-						rez_str += '<table><tr><th>dVV</td><td>p</td></tr>';
+						rez_str += '<table><tr><th>dV</th><th>p</th></tr>';
 						
 						for ( n = 0; n < i; n++) {
 						
@@ -55,7 +59,7 @@ table, td {
 						//		rez_str += '<br>';
 						//		rez_str += '<br>';
 								
-							rez_str += '<tr><td>' + dVV + '</td><td>' + p + '</td></tr>';
+							rez_str += '<tr><td>' + dVV.toFixed ( 3 ) + '</td><td>' + p.toFixed ( 3 ) + '</td></tr>';
 				
 			
 				}
@@ -76,12 +80,12 @@ table, td {
 
 <body  style="background-color:Cyan;"> 
 	
-	Paskaiciuokim fizikos formule duju slegiui (Azotas): p=((m/M)*R*T)/V   <br> 
+	Paskaiciuokim fizikos formule duju slegiui (Azotas): p=((m/M)*R*T)/dV   <br> 
 	Naudojam: m=14,0067 <br>
 			  M=7 <br>
 			  R=8.31   <br>
 			  T=23   <br>
-	Ir siaip formule: dx = ( V_gal - V_pr ) / 19 <br>
+	Ir formule: dV = ( V_gal - V_pr ) / 19 <br>
 		
 	Isivedam pradine V reiksme?<br>
 	<input type="text" id="x_pr" style="width: 60px" value=""><br>
