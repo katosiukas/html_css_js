@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<title>
+		Zaidimas su masyvu
+	</title>
+	<style>
+		#rez {
+			background-color: yellow;
+		}
+	</style>
+	<script>
+	

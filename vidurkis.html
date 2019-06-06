@@ -3,8 +3,13 @@
 <head>
 		<meta charset="utf-8">
 	<title>
-		šalinimas
+		Zaidimas su masyvu
 	</title>
+	<style>
+		#rez {
+			background-color: yellow;
+		}
+	</style>
 	<script>
 			
 		function salinti_nulius() {
@@ -35,41 +40,63 @@
 				} else {
 				
 					
-					max = parseInt ( skaiciai [ 0 ] );
-					l = 0;		
-										
+					suma = 0;							
+					vidurkis = 0;
+					maz = 0;
+					n = 0;
+					m = 0;
+					maz_vid = 0;
+					
 					for  (  i = 1; i < skaiciai.length; i++ )  {
 					
 						skaic = parseInt ( skaiciai [ i ] );
 												
-
-						
-						if ( skaic == 0 ) {
-						
-						l = l + 1;
-						
-						rez_str += ' max ' + l + ' '  + max; 
-						rez_str += '<br>';
-						max = 0;
-												
-						}
-													
-						if ( skaic > max ) {
-						
-							max = skaic;
-						}
-					
-					    if ( i == skaiciai.length ) {
-						
-							rez_str += max;
-							rez_str += '<br>';
-						
-						}
-
+						suma = suma + skaic;
+											
 					}
 
-				//	rez_str += ' max = ' + max;
-					rez_str += '<br>';														// sprendimo pabaiga
+					rez_str += ' masyvo suma = ' + suma;
+					rez_str += '<br>';														
+				
+					vidurkis = suma / skaiciai.length;
+				
+					rez_str += ' masyvo vidurkis = ' + vidurkis;
+					rez_str += '<br>';
+				
+					var mazesni = [ ];
+					var didesni = [ ];
+					
+					for ( i = 0; i < skaiciai.length; i++) {
+					
+						maz = parseInt (skaiciai [ i ] );
+						
+						if ( maz < vidurkis ) {
+							
+							// rez_str += ' mazesnis uz vidurki skaicius = ' + maz;
+							// rez_str += '<br>';
+							mazesni.push(maz);
+							n = n + 1;
+							m = m + maz;
+						}						
+					
+						if ( maz > vidurkis ) {
+						
+							didesni.push(maz);
+							// rez_str += ' didesnis ' + maz;
+							// rez_str += '<br>';
+							
+							}
+					}
+					
+					maz_vid = m / n;
+					rez_str += ' mazesniu skaicius = ' + n;
+					rez_str += '<br>';
+					rez_str += ' mazesniu vidurkis = ' + maz_vid;		
+					rez_str += '<br>';
+				
+					rez_str += ' mazesni skaiciai = ' + mazesni;
+					rez_str += '<br>';
+					rez_str += ' didesni skaiciai = ' + didesni;
 				}
 				
 			} else {
@@ -79,13 +106,20 @@
 			
 			rez = document.getElementById ( 'rez' );
 			rez.innerHTML = rez_str; 
-		}
+			
+		}					
 	</script>
 </head>
 <body> 
-	skaičiai?<br>
+	
+	<body style="background-color:blue;">
+	
+		
+	Šitie skaičiai A?<br>
 	<input type="text" id="sk" style="width: 600px" value="8,6,7,4,12,0,18,4,14,0,7,3,1,0,4,2,8,7,2,6"><br>
-	<input type="button" onClick="salinti_nulius()" value="dariti">
+	
+	
+	<input type="button" onClick="salinti_nulius()" style="border:2px solid Violet; color:White; background-color:Red" value="daryti">
 	<div id="rez">
 	</div>
 </body>

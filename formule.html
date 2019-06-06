@@ -2,28 +2,76 @@
 <html>
 <head>
 		<meta charset="utf-8">
+	<style>
+#panel, .flip {
+  font-size: 14px;
+  padding: 6px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  border: solid 1px #a6d8a8;
+  margin: auto;
+}
+
+#panel {
+  display: none;
+}
+</style>
+	
 	<title>
 		Matematine formule. 
 	</title>
 	
 	<script>
 			
+		
 			function paskaiciuokim() {
 			
+				document.getElementById("panel").style.display = "block";
+				m = 14,0067; 
+			    M = 7; 
+			    R = 8.31;   
+			    T = 23;   
+				dV = 0;
+				x_g = document.getElementById ( 'x_gal' ).value;
+				x_p = document.getElementById ( 'x_pr' ).value;
 				
 			
+			//	x_gal = parseInt ( x_g );
+			//	x_pr = parseInt ( x_p );
+				dV = (	x_g - x_p ) / 19;
+				
+			//	rez_str = ' dx = ';
+			//	rez_str += dV;
+				rez_str = '<br>';
+				
+				p = ((m/M)*R*T)/dV;
+				
+			//	rez_str += ' p yra = ' + p;
+			//	rez_str += '<br>';
+				
+						i = x_g - x_p;
+						dVV = dV;
+						
+						for ( n = 0; n < i; n++) {
+						
+								rez_str += 'kai dx = ' + dVV;
+								rez_str += '<br>';
+								
+								p = (( m / M) * R * T) / dVV;
+								dVV = dVV * 2;
+								rez_str += ' p yra = ' + p;
+								rez_str += '<br>';
+								rez_str += '<br>';
+				}
 				
 				
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
+			rez = document.getElementById ( 'rez' );
+			rez.innerHTML = rez_str; 
+							
 				}
 				
 	</script>
@@ -46,8 +94,15 @@
 	<input type="text" id="x_gal" style="width: 60px" value=""><br>
 	
 	
-	<input type="button" onClick="paskaiciuokim()" style="border:2px solid Violet; color:White; background-color:Red" value="skaiciuoti">
+	<input type="button" class="flip" onClick="paskaiciuokim()" style="border:2px solid Violet; color:White; background-color:Red" value="skaiciuoti">
 	<div id="rez">
 	</div>
+		
+		
+		<div id="panel">
+		<p>Rezultatai cia.</p>
+		</div>
+
+
 </body>
 </html>
