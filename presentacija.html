@@ -38,63 +38,126 @@
   margin-left: 650px;
 }
 
-.dropdown {
+.container {
   position: relative;
-  display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 
-.dropdown-content {
-  display: none;
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn0 {
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 12px;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.container .btn1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 12px;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 12px;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn0:hover {
+  background-color: black;
+  color: white;
+}
+
+.container .btn1:hover {
+  background-color: black;
+  color: white;
+}
+
+.container .btn2:hover {
+  background-color: black;
+  color: white;
 }
 
 </style>
 </head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script>
+	
+	$(document).ready(function(){
+		
+		$ ( '#btn1' ).click (function () {
+				
+				$ ( '#div1' ).animate ( { 'top': '50px' }, 3000);
+			});
+	
+	
+	});
+	</script>
+	
 <body>
 
 <h2>Ka as veikiau praeita vasara:</h2>
 
 <div id="div0">
  <img src="acc.jpg" style="width:100%">
- <div class="dropdown">
-  <span>Darbas ACC</span>
-  <div class="dropdown-content">
-  <p>Padirbejau kelis metus ACC.</p>
+ <div class="container">
+  <button class="btn0">ACC</button>
   </div>
 </div>
 </div>
 
 <div id="div1"> 
 <img src="ict.jpg" style="width:100%">
-<div class="dropdown">
-  <span>Darbas ICT</span>
-  <div class="dropdown-content">
-  <p>Padirbejau kelis metus ICT.</p>
+<div class="container">
+  <button class="btn1">ICT</button>
   </div>
 </div>
 </div>
 
 <div id="div2">
 <img src="team.jpg" style="width:100%">
-<div class="dropdown">
-  <span>ICT TeamLead</span>
-  <div class="dropdown-content">
-  <p>Ir tada pabuvau ICT teamlead.</p>
+<div class="container">
+  <button class="btn2">TL</button>
   </div>
 </div>
 </div>
 
 
-
-
+	
 </body>
 </html>
