@@ -9,32 +9,35 @@
 
 <style>
 #div0 {
+  position: absolute;
   background-color: lightgrey;
   width: 100px;
   border: 15px solid green;
   border-style: groove;
   padding: 50px;
-  margin-top: 300px;
+  margin-top: 500px;
   margin-left: 10px;
 }
 
 #div1 {
+  position: absolute;
   background-color: lightblue;
   width: 100px;
   border: 15px solid green;
   border-style: groove;
   padding: 75px;
-  margin-top: -300px;
+  margin-top:  300px;
   margin-left: 300px;
 }
 
 #div2 {
+  position: absolute;
   background-color: red;
   width: 100px;
   border: 15px solid green;
   border-style: groove;
   padding: 100px;
-  margin-top: -380px;
+  margin-top: 200px;
   margin-left: 650px;
 }
 
@@ -113,21 +116,37 @@
 }
 
 </style>
-</head>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script>
-	
 	$(document).ready(function(){
 		
-		$ ( '#btn1' ).click (function () {
-				
-				$ ( '#div1' ).animate ( { 'top': '50px' }, 3000);
-			});
-	
-	
+
+		
+		$( '#ACC' ).click (function () {
+		
+			$( '#div0' ).animate ( { 'top': '500px' }, 3000);
+			
+		});
+		
+		$( '#ICT' ).click (function () {
+		
+			$( '#div1' ).animate ( { 'bottom': '5000px' }, 3000);
+			
+		});
+		
+		$( '#TL' ).click (function () {
+		
+			$( '#div2' ).animate ( { 'left': '5000px' }, 3000);
+			
+		});
+		
 	});
-	</script>
+	</script>	
+</head>
+
+
+	
+
 	
 <body>
 
@@ -136,7 +155,7 @@
 <div id="div0">
  <img src="acc.jpg" style="width:100%">
  <div class="container">
-  <button class="btn0">ACC</button>
+  <button id="ACC" class="btn0">ACC</button>
   </div>
 </div>
 </div>
@@ -144,7 +163,7 @@
 <div id="div1"> 
 <img src="ict.jpg" style="width:100%">
 <div class="container">
-  <button class="btn1">ICT</button>
+  <button id="ICT" class="btn1" >ICT</button>
   </div>
 </div>
 </div>
@@ -152,7 +171,7 @@
 <div id="div2">
 <img src="team.jpg" style="width:100%">
 <div class="container">
-  <button class="btn2">TL</button>
+  <button id="TL" class="btn2">TL</button>
   </div>
 </div>
 </div>
