@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<title>
+		auginam medy
+	</title>
+	<style>
+		#rez {
+			background-color: white;
+		}
+	</style>
+	<script>
+			
+		function salinti_nulius() {
+		
+			N = document.getElementById ( 'N' ).value;
+			
+			
+			
+			rez_str = ' Is ' +N ;
+			rez_str += '<br>';
+			
+			
+		//	M = M - 1; 			// medziai po pirmu metu tik uzaugs, pirmu metu neskaiciuojam, brandins pirmas po 2 metu nuo seklu ir 4 metai po seklu
+			
+		//	rez_str += 'Auginam ' +M +' metu (us)';
+		//	rez_str += '<br>';
+			
+		//	med_du_met = S * K; //po pirmu 2 metu
+		//	med_ket_met = S * T; //po pirmu 4 metu
+		//	med_try_met = med_du_met + ( S - 1 ); //po pirmu 3 metu, pradines seklos ir 2 metu medziai
+			
+			
+						
+		//	for ( i = 0; i < N; i++ ) {
+			
+				t1 = 0;
+				t2 = 1;
+				F = 0;
+				
+				for ( a = 1; a < N; a++ ) {
+					
+					F = t1 + t2;
+					t1 = t2;
+					t2 = F;
+						
+				rez_str += F;
+				rez_str += '<br>';
+			
+				}
+		//	}
+			
+			rez = document.getElementById ( 'rez' );
+			rez.innerHTML = rez_str; 
+			
+		}					
+	</script>
+</head>
+<body  style="background-color:white;"> 
+	
+	Fibonaci <br>
+		
+	N?<br>
+	<input type="text" id="N" style="width: 60px" ><br>
+	
+	
+	
+	
+	
+	<input type="button" onClick="salinti_nulius()" style="border:2px solid Violet; color:White; background-color:Red" value="paskaiciuokim">
+	
+	<div id="rez">
+	</div>
+</body>
+</html>
